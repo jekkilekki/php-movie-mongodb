@@ -1,7 +1,7 @@
 <?php
-// movieDB µ¥ÀÌÅÍº£ÀÌ½º Á¢¼Ó
+// movieDB ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì†
 $conn = mysqli_connect("localhost", "movie_user", "1234", "movieDB")
-    or die("movieDB µ¥ÀÌÅÍº£ÀÌ½º Á¢¼Ó ½ÇÆĞ!");
+    or die("movieDB ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì† ì‹¤íŒ¨!");
 
 $title = $_POST['title'];
 $genre = $_POST['genre'];
@@ -19,15 +19,15 @@ if(isset($FILES['poster'])) {
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
-            echo "<script>alert('$title' Á¤º¸ Ãß°¡ ¼º°ø!);</script>";
+            echo "<script>alert('$title' ì •ë³´ ì¶”ê°€ ì„±ê³µ!);</script>";
         } else {
-            echo "<script>alert('SQL¹® Á¤º¸ Ãß°¡ ¿À·ù \\n¿À·ù ³»¿ë: $err_msg');</script>";
+            echo "<script>alert('SQLë¬¸ ì •ë³´ ì¶”ê°€ ì˜¤ë¥˜ \\nì˜¤ë¥˜ ë‚´ìš©: $err_msg');</script>";
         }
     } else {
-        echo "<script>alert('ÆÄÀÏ ¾÷·Îµå ½ÇÆĞ!');</script>";
+        echo "<script>alert('íŒŒì¼ ì—…ë¡œë“œ ì‹¤íŒ¨!');</script>";
     }
 } else {
-    echo "<script>alert('ÆÄÀÏ ¾÷·Îµå ¿À·ù ¹ß»ı!');</script>";
+    echo "<script>alert('íŒŒì¼ ì—…ë¡œë“œ ì˜¤ë¥˜ ë°œìƒ!');</script>";
 }
 
 mysqli_close($conn);

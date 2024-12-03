@@ -9,22 +9,22 @@
     <title>Movie Web App</title>
 </head>
 <body>
-    <!-- ���� ��ȭ���� �˻� ���̾˷α� -->
+    <!-- 삭제 영화정보 검색 다이알로그 -->
     <div data-role="dialog" id="page3">
         <div data-role="header" data-theme="b">
-            <h1>��ȭ �˻�</h1>
+            <h1>영화 검색</h1>
         </div>
 
         <div data-role="content">
-            <h3>������ ��ȭ �˻�</h3>
+            <h3>삭제할 영화 검색</h3>
             <form name="form3" method="POST" action="delete.php" data-ajax="false">
                 <div class="ui-body ui-body-a">
-                    <label>��ȭ��: </label>
+                    <label>영화명: </label>
                     <input type="search" name="stitle" id="stitle" data-mini="true" data-inline="true">
                 </div>
 
-                <input type="submit" value="�˻�" data-mini="true">
-                <input type="reset" value="���" data-mini="true">
+                <input type="submit" value="검색" data-mini="true">
+                <input type="reset" value="취소" data-mini="true">
             </form>
         </div>
     </div>

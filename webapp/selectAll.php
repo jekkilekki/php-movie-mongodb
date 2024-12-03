@@ -1,8 +1,8 @@
 <?php
 
-// movieDB µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+// movieDB ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
 $conn = mysqli_connect("localhost", "movie_user", "1234", "movieDB")
-    or die("movieDB µ¥ÀÌÅÍº£ÀÌ½º Á¢¼Ó ½ÇÆĞ!");
+    or die("movieDB ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì† ì‹¤íŒ¨!");
 
 $sql = "SELECT * FROM MOVIE";
 $result = mysqli_query($conn, $sql);
@@ -10,14 +10,14 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
     $count = mysqli_num_rows($result);
     if ($count == 0) {
-        echo "<script>alert('ÇØ´ç Á¤º¸°¡ ¾ø½À´Ï´Ù.');location.replace('main.php');</script>";
+        echo "<script>alert('í•´ë‹¹ ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.');location.replace('main.php');</script>";
     }
 } else {
     $err = mysqli_error($conn);
-    echo "<script>alert('SQL¹® Á¤º¸Á¶È¸ ¿À·ù\n¿À·ù³»¿ë: $err');</script>";
+    echo "<script>alert('SQLë¬¸ ì •ë³´ì¡°íšŒ ì˜¤ë¥˜\nì˜¤ë¥˜ë‚´ìš©: $err');</script>";
 }
 
-$taglist = '<li data-role="list-divider">¿µÈ­ ¸ñ·Ï'.'<span style="float: right">'.$count.'°Ç'.'</span></li>';
+$taglist = '<li data-role="list-divider">ì˜í™” ëª©ë¡'.'<span style="float: right">'.$count.'ê±´'.'</span></li>';
 
 while ($row = mysqli_fetch_array($result)) {
     $taglist .= '<li><a href="select.php?id='.$row['id'].'">';
@@ -25,7 +25,7 @@ while ($row = mysqli_fetch_array($result)) {
     $taglist .= '<h2>'.$row['title'].'</h2>';
     $taglist .= '<p>'.$row['genre'].'</p>';
     $taglist .= '<p>'.$row['date'].'</p>';
-    $taglist .= '<p class="ui-li-aside">'.$row['price'].'¿ø</p>';
+    $taglist .= '<p class="ui-li-aside">'.$row['price'].'ì›</p>';
     $taglist .= '</a></li>';
 }
 
@@ -42,21 +42,21 @@ mysqli_close($conn);
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <title>¿µÈ­ °ü¸®</title>
+    <title>ì˜í™” ê´€ë¦¬</title>
 </head>
 <body>
-    <!-- ÀüÃ¼ ¿µÈ­Á¶È¸ È­¸é -->
+    <!-- ì „ì²´ ì˜í™”ì¡°íšŒ í™”ë©´ -->
     <div data-role="page" id="page4">
         <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="#" data-icon="back" data-rel="back">&larr; µÚ·Î (Back)</a>
-            <h1>¿µÈ­ Á¤º¸ ÀüÃ¼ Á¶È¸</h1>
-            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">¿µÈ­ ¸ñ·Ï (Home)</a>
+            <a href="#" data-icon="back" data-rel="back">&larr; ë’¤ë¡œ (Back)</a>
+            <h1>ì˜í™” ì •ë³´ ì „ì²´ ì¡°íšŒ</h1>
+            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">ì˜í™” ëª©ë¡ (Home)</a>
             <div data-role="navbar">
                 <ul>
-                    <li><a href="insert.php">ÀÔ·Â</a></li>
-                    <li><a href="update_select.php">¼öÁ¤</a></li>
-                    <li><a href="delete_select.php">»èÁ¦</a></li>
-                    <li><a href="selectAll.php" class="ui-btn-active">ÀüÃ¼ °Ë»ö</a></li>
+                    <li><a href="insert.php">ì…ë ¥</a></li>
+                    <li><a href="update_select.php">ìˆ˜ì •</a></li>
+                    <li><a href="delete_select.php">ì‚­ì œ</a></li>
+                    <li><a href="selectAll.php" class="ui-btn-active">ì „ì²´ ê²€ìƒ‰</a></li>
                 </ul>
             </div>
         </div>

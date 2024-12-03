@@ -1,8 +1,8 @@
 <?php
 
-// movieDB µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+// movieDB ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
 $conn = mysqli_connect("localhost", "movie_user", "1234", "movieDB")
-    or die("movieDB µ¥ÀÌÅÍº£ÀÌ½º Á¢¼Ó ½ÇÆÐ!");
+    or die("movieDB ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì† ì‹¤íŒ¨!");
 
 $title = $_POST['stitle'];
 
@@ -16,10 +16,10 @@ $sql = "DELETE FROM MOVIE WHERE title='$title'";
 $result = mysqli_query($conn, $sql);
 
 if ($result) {
-    echo "<script>alert('$title' Á¤º¸ »èÁ¦ ¼º°ø!);</script>";
+    echo "<script>alert('$title' ì •ë³´ ì‚­ì œ ì„±ê³µ!);</script>";
 } else {
     $err = mysqli_error($conn);
-    echo "<script>alert('SQL¹® Á¤º¸ »èÁ¦ ¿À·ù \\n¿À·ù ³»¿ë: $err');</script>";
+    echo "<script>alert('SQLë¬¸ ì •ë³´ ì‚­ì œ ì˜¤ë¥˜ \\nì˜¤ë¥˜ ë‚´ìš©: $err');</script>";
 }
 
 mysqli_close($conn);

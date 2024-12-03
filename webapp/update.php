@@ -1,8 +1,8 @@
 <?php
 
-// movieDB µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+// movieDB ë°ì´í„°ë² ì´ìŠ¤ ì—°ê²°
 $conn = mysqli_connect("localhost", "movie_user", "1234", "movieDB")
-    or die("movieDB µ¥ÀÌÅÍº£ÀÌ½º Á¢¼Ó ½ÇÆÐ!");
+    or die("movieDB ë°ì´í„°ë² ì´ìŠ¤ ì ‘ì† ì‹¤íŒ¨!");
 
 $title = $_POST['smovieTitle2'];
 
@@ -12,11 +12,11 @@ $result = mysqli_query($conn, $sql);
 if ($result) {
     $count = mysqli_num_rows($result);
     if ($count == 0) {
-        echo "<script>alert('°Ë»öµÈ ¿µÈ­ Á¤º¸°¡ ¾ø½À´Ï´Ù.');location.replace('main.php');</script>";
+        echo "<script>alert('ê²€ìƒ‰ëœ ì˜í™” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤.');location.replace('main.php');</script>";
     }
 } else {
     $err = mysqli_error($conn);
-    echo "<script>alert('SQL¹® Á¤º¸Á¶È¸ ¿À·ù\n¿À·ù³»¿ë: $err');</script>";
+    echo "<script>alert('SQLë¬¸ ì •ë³´ì¡°íšŒ ì˜¤ë¥˜\nì˜¤ë¥˜ë‚´ìš©: $err');</script>";
 }
 
 $row = mysqli_fetch_array($result);
@@ -39,60 +39,60 @@ mysqli_close($conn);
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <title>¿µÈ­ °ü¸®</title>
+    <title>ì˜í™” ê´€ë¦¬</title>
 </head>
 <body>
-    <!-- ¿µÈ­ Á¤º¸ °»½Å È­¸é -->
+    <!-- ì˜í™” ì •ë³´ ê°±ì‹  í™”ë©´ -->
     <div data-role="page" id="page2">
         <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="#" data-icon="back" data-rel="back">&larr; µÚ·Î (Back)</a>
-            <h1>¿µÈ­ Á¤º¸ ¼öÁ¤</h1>
-            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">¿µÈ­ ¸ñ·Ï (Home)</a>
+            <a href="#" data-icon="back" data-rel="back">&larr; ë’¤ë¡œ (Back)</a>
+            <h1>ì˜í™” ì •ë³´ ìˆ˜ì •</h1>
+            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">ì˜í™” ëª©ë¡ (Home)</a>
             <div data-role="navbar">
                 <ul>
-                    <li><a href="insert.php">ÀÔ·Â</a></li>
-                    <li><a href="update_select.php" class="ui-btn-active">¼öÁ¤</a></li>
-                    <li><a href="delete_select.php">»èÁ¦</a></li>
-                    <li><a href="selectAll.php">ÀüÃ¼ °Ë»ö</a></li>
+                    <li><a href="insert.php">ìž…ë ¥</a></li>
+                    <li><a href="update_select.php" class="ui-btn-active">ìˆ˜ì •</a></li>
+                    <li><a href="delete_select.php">ì‚­ì œ</a></li>
+                    <li><a href="selectAll.php">ì „ì²´ ê²€ìƒ‰</a></li>
                 </ul>
             </div>
         </div>
 
         <div data-role="content">
-            <h3>¿µÈ­ ³»¿ë ¼öÁ¤</h3>
+            <h3>ì˜í™” ë‚´ìš© ìˆ˜ì •</h3>
             <form name="form2" method="POST" enctype="multipart/form-data" action="update_result.php" data-ajax="false">
                 <div class="ui-body ui-body-a">
-                    <label>¿µÈ­¸í: </label>
+                    <label>ì˜í™”ëª…: </label>
                     <input type="text" name="title" id="title" value="<?php echo $title; ?>" data-mini="true" data-inline="true">
-                    <label>Àå¸£: </label>
+                    <label>ìž¥ë¥´: </label>
                     <select name="genre" data-native-menu="false" data-mini="true" data-inline="true" id="genre">
                         <option value="<?php echo $genre; ?>"><?php echo $genre; ?></option>
-                        <option value="¾×¼Ç">¾×¼Ç</option>
-                        <option value="ÄÚ¹Ìµð">ÄÚ¹Ìµð</option>
-                        <option value="·Î¸Ç½º">·Î¸Ç½º</option>
-                        <option value="½º¸±·¯">½º¸±·¯</option>
+                        <option value="ì•¡ì…˜">ì•¡ì…˜</option>
+                        <option value="ì½”ë¯¸ë””">ì½”ë¯¸ë””</option>
+                        <option value="ë¡œë§¨ìŠ¤">ë¡œë§¨ìŠ¤</option>
+                        <option value="ìŠ¤ë¦´ëŸ¬">ìŠ¤ë¦´ëŸ¬</option>
                         <option value="SF">SF</option>
-                        <option value="ÆÇÅ¸Áö">ÆÇÅ¸Áö</option>
-                        <option value="°øÆ÷">°øÆ÷</option>
-                        <option value="µå¶ó¸¶">µå¶ó¸¶</option>
-                        <option value="´ÙÅ¥¸àÅÍ¸®">´ÙÅ¥¸àÅÍ¸®</option>
-                        <option value="¾Ö´Ï¸ÞÀÌ¼Ç">¾Ö´Ï¸ÞÀÌ¼Ç</option>
-                        <option value="±âÅ¸">±âÅ¸</option>
+                        <option value="íŒíƒ€ì§€">íŒíƒ€ì§€</option>
+                        <option value="ê³µí¬">ê³µí¬</option>
+                        <option value="ë“œë¼ë§ˆ">ë“œë¼ë§ˆ</option>
+                        <option value="ë‹¤íë©˜í„°ë¦¬">ë‹¤íë©˜í„°ë¦¬</option>
+                        <option value="ì• ë‹ˆë©”ì´ì…˜">ì• ë‹ˆë©”ì´ì…˜</option>
+                        <option value="ê¸°íƒ€">ê¸°íƒ€</option>
                     </select>
-                    <label>»ó¿µ³¯Â¥ (yyyy-mm-dd): </label>
+                    <label>ìƒì˜ë‚ ì§œ (yyyy-mm-dd): </label>
                     <input type="date" name="date" id="date" value="<?php echo $date; ?>" data-mini="true" data-inline="true">
-                    <label>°ü¶÷·á: </label>
+                    <label>ê´€ëžŒë£Œ: </label>
                     <input type="text" name="price" id="price" value="<?php echo $price; ?>" data-mini="true" data-inline="true">
-                    <label>Æ÷½ºÅÍ: </label>
+                    <label>í¬ìŠ¤í„°: </label>
                     <input type="file" name="poster" id="poster" data-mini="true" data-inline="true">
                 </div>
                 <div class="ui-body">
                     <fieldset class="ui-grid-a">
                         <div class="ui-block-a">
-                            <input type="submit" value="¼öÁ¤" data-mini="true">
+                            <input type="submit" value="ìˆ˜ì •" data-mini="true">
                         </div>
                         <div class="ui-block-b">
-                            <input type="reset" value="Ãë¼Ò" data-mini="true">
+                            <input type="reset" value="ì·¨ì†Œ" data-mini="true">
                         </div>
                     </fieldset>
                 </div>

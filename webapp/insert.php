@@ -9,59 +9,59 @@
     <title>Movie Web App</title>
 </head>
 <body>
-    <!-- ��ȭ ���� �߰� ȭ�� -->
+    <!-- 영화 정보 추가 화면 -->
     <div data-role="page" id="page1">
         <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="#" data-icon="back" data-rel="back">&larr; �ڷ� (Back)</a>
-            <h1>��ȭ ���� �Է�</h1>
-            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">��ȭ ��� (Home)</a>
+            <a href="#" data-icon="back" data-rel="back">&larr; 뒤로 (Back)</a>
+            <h1>영화 정보 입력</h1>
+            <a href="main.php" data-icon="home" data-iconpos="notext" class="ui-btn-right">영화 목록 (Home)</a>
 
             <div data-role="navbar">
                 <ul>
-                    <li><a href="insert.php" class="ui-btn-active">�Է�</a></li>
-                    <li><a href="update_select.php">����</a></li>
-                    <li><a href="delete_select.php">����</a></li>
-                    <li><a href="selectAll.php">��ü �˻�</a></li>
+                    <li><a href="insert.php" class="ui-btn-active">입력</a></li>
+                    <li><a href="update_select.php">수정</a></li>
+                    <li><a href="delete_select.php">삭제</a></li>
+                    <li><a href="selectAll.php">전체 검색</a></li>
                 </ul>
             </div>
         </div>
 
         <div data-role="content">
             <form name="form1" method="POST" enctype="multipart/form-data" action="insert_result.php" data-ajax="false">
-                <h3>��ȭ ���� �Է�</h3>    
+                <h3>영화 정보 입력</h3>    
                 <div class="ui-body ui-body-a">
-                    <label>�帣: </label>
+                    <label>장르: </label>
                     <select name="genre" data-native-menu="false" data-mini="true" data-inline="true" id="genre">
-                        <option value="����">����</option>
-                        <option value="�׼�">�׼�</option>
-                        <option value="�ڹ̵�">�ڹ̵�</option>
-                        <option value="�θǽ�">�θǽ�</option>
-                        <option value="������">������</option>
+                        <option value="미정">미정</option>
+                        <option value="액션">액션</option>
+                        <option value="코미디">코미디</option>
+                        <option value="로맨스">로맨스</option>
+                        <option value="스릴러">스릴러</option>
                         <option value="SF">SF</option>
-                        <option value="��Ÿ��">��Ÿ��</option>
-                        <option value="����">����</option>
-                        <option value="���">���</option>
-                        <option value="��ť���͸�">��ť���͸�</option>
-                        <option value="�ִϸ��̼�">�ִϸ��̼�</option>
-                        <option value="��Ÿ">��Ÿ</option>
+                        <option value="판타지">판타지</option>
+                        <option value="공포">공포</option>
+                        <option value="드라마">드라마</option>
+                        <option value="다큐멘터리">다큐멘터리</option>
+                        <option value="애니메이션">애니메이션</option>
+                        <option value="기타">기타</option>
                     </select>
-                    <label>��ȭ��: </label>
+                    <label>영화명: </label>
                     <input type="text" name="title" id="title" data-mini="true" data-inline="true">
-                    <label>�󿵳�¥ (yyyy-mm-dd): </label>
+                    <label>상영날짜 (yyyy-mm-dd): </label>
                     <input type="date" name="date" id="date" data-mini="true" data-inline="true">
-                    <label>������: </label>
+                    <label>관람료: </label>
                     <input type="text" name="price" id="price" data-mini="true" data-inline="true">
-                    <label>������: </label>
+                    <label>포스터: </label>
                     <input type="file" name="poster" id="poster" data-mini="true" data-inline="true">
                 </div>
 
                 <div class="ui-body">
                     <fieldset class="ui-grid-a">
                         <div class="ui-block-a">
-                            <input type="reset" value="���" data-mini="true">
+                            <input type="reset" value="취소" data-mini="true">
                         </div>
                         <div class="ui-block-b">
-                            <input type="submit" value="�߰�" data-mini="true">
+                            <input type="submit" value="추가" data-mini="true">
                         </div>
                     </fieldset>
                 </div>
